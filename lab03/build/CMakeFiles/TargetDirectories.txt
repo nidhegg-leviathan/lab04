@@ -1,3 +1,0 @@
-/home/ilya/formatter_lib/build/CMakeFiles/formatter_lib.dir
-/home/ilya/formatter_lib/build/CMakeFiles/edit_cache.dir
-/home/ilya/formatter_lib/build/CMakeFiles/rebuild_cache.dir
