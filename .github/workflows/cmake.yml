@@ -1,0 +1,46 @@
+name: CMake_Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+    
+    - name: Build a *formatter* library
+      run: |
+        cmake -H. -B_build
+        cmake --build _build
+      shell: bash
+      working-directory: formatter_lib
+      
+    - name: Build a *formatter_ex* library
+      run: |
+        cmake -H. -B_build
+        cmake --build _build
+      shell: bash
+      working-directory: formatter_ex_lib
+      
+    - name: Build a *hello_world* application
+      run: |
+        cmake -H. -B_build
+        cmake --build _build
+      shell: bash
+      working-directory: hello_world_application
+      
+    - name: Build a *solver* application
+      run: |
+        cmake -H. -B_build
+        cmake --build _build
+      shell: bash
+      working-directory: solver_application
